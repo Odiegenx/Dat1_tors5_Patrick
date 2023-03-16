@@ -1,0 +1,34 @@
+
+//// 4.a and 4.b and 4.c
+@startuml
+'https://plantuml.com/object-diagram
+
+Class Main
+Class Room
+Class Building
+
+Main : +int countLampsInBuilding(Building)
+Main : +boolean isNormal(Building)
+
+Building : - ArrayList<Room> rooms
+Building : - int numberOfBathrooms
+Building : - int numberOfFloors
+Building : - boolean isOfficeBuilding
+Building : + Building(ArrayList,int, int, boolean)
+Building : + ArrayList<Room> getRooms()
+Building : + int getNumberOfBathRooms()
+Building : + int getNumberOfFLoors()
+
+Room : - int numberOfDoors
+Room : - int numberOfLamps
+Room : - int numberOfWindows
+Room : + Room(int int int)
+Room : + int getNumberOfDoors()
+Room : + int getNumberOfLamps()
+Room : + int getNumberOfWindows()
+
+Building *-- Room
+Main *-- Building
+
+
+@enduml
